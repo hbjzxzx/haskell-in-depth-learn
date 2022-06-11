@@ -29,7 +29,7 @@ library radar-lib
   hs-source-dirs:
       src/Radar
   build-depends:
-      base >=4.7 && <5
+      base >=4.7
   default-language: Haskell2010
 
 executable radar-exe
@@ -40,8 +40,19 @@ executable radar-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      base >=4.7
     , radar-lib
+  default-language: Haskell2010
+
+executable vocab1
+  main-is: vocab1.hs
+  other-modules:
+      Paths_radar
+  hs-source-dirs:
+      src/ch01
+  build-depends:
+      base >=4.7
+    , text
   default-language: Haskell2010
 
 test-suite radar-test
@@ -53,7 +64,7 @@ test-suite radar-test
       test/radar
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      base >=4.7
     , radar-lib
     , random ==1.2.*
   default-language: Haskell2010
