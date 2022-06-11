@@ -1,14 +1,14 @@
-cabal-version: 2.0
+cabal-version: 1.12
 
 -- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 
-name:           radar
+name:           hid-learn
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/radar#readme>
-homepage:       https://github.com/githubuser/radar#readme
-bug-reports:    https://github.com/githubuser/radar/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/hid-learn#readme>
+homepage:       https://github.com/githubuser/hid-learn#readme
+bug-reports:    https://github.com/githubuser/hid-learn/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2022 Author name here
@@ -21,50 +21,50 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/radar
+  location: https://github.com/githubuser/hid-learn
 
-library radar-lib
+library
   exposed-modules:
-      Radar
+      Lib
+  other-modules:
+      Paths_hid_learn
   hs-source-dirs:
-      src/Radar
+      src
   build-depends:
-      base >=4.7
+      base >=4.7 && <5
   default-language: Haskell2010
 
-executable radar-exe
+executable hid-learn-exe
   main-is: Main.hs
   other-modules:
-      Paths_radar
+      Paths_hid_learn
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7
-    , radar-lib
+      base >=4.7 && <5
+    , hid-learn
   default-language: Haskell2010
 
-executable vocab1
-  main-is: vocab1.hs
+executable vocab01
+  main-is: vocab01.hs
   other-modules:
-      Paths_radar
+      Paths_hid_learn
   hs-source-dirs:
       src/ch01
   build-depends:
-      base >=4.7
-    , text
+      base >=4.7 && <5
   default-language: Haskell2010
 
-test-suite radar-test
+test-suite hid-learn-test
   type: exitcode-stdio-1.0
-  main-is: Test.hs
+  main-is: Spec.hs
   other-modules:
-      Paths_radar
+      Paths_hid_learn
   hs-source-dirs:
-      test/radar
+      test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7
-    , radar-lib
-    , random ==1.2.*
+      base >=4.7 && <5
+    , hid-learn
   default-language: Haskell2010

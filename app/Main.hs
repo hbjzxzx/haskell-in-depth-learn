@@ -1,8 +1,6 @@
 module Main where
 
-import Radar
+import Lib
 
 main :: IO ()
 main = someFunc
-df :: a ->
-df

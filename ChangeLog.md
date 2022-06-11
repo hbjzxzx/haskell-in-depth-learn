@@ -1,3 +1,3 @@
-# Changelog for radar
+# Changelog for hid-learn
 
 ## Unreleased changes
