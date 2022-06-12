@@ -31,6 +31,7 @@ resolver:
 #   - wai
 packages:
 - .
+- src/ch03
 # Dependency packages to be pulled from upstream that are not in the resolver.
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
@@ -40,8 +41,10 @@ packages:
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 #
-# extra-deps: []
-
+extra-deps: 
+  - Chart-diagrams-1.9.4@sha256:c04a6f1005aac1d5cdbba9d835cac302e9de4033314c2253a4c4f3b69c5afb4b,1762
+  - diagrams-postscript-1.5.1@sha256:f1bd02682105abd7e45f1e70ca24f8fe68b12340ebf026788d3349502b3faf71,2332
+  - statestack-0.3.1@sha256:3ae02171e0a546efd9dcc9dae358e70f0bbd14be52297422381d00f085321682,1047
 # Override default flag values for local packages and extra-deps
 # flags: {}
 

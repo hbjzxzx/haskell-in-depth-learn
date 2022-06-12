@@ -1,6 +1,6 @@
-name:                hid-learn
+name:                stackquotes
 version:             0.1.0.0
-github:              "githubuser/hid-learn"
+github:              "githubuser/stackquotes"
 license:             BSD3
 author:              "Author name here"
 maintainer:          "example@example.com"
@@ -17,21 +17,27 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/hid-learn#readme>
+description:         Please see the README on GitHub at <https://github.com/githubuser/stackquotes#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+  - base >= 4.7 && < 5
+  - text
+  - bytestring
+  - time
+  - fmt
+  - colonnade
+  - blaze-html
+  - blaze-colonnade
+  - Chart
+  - Chart-diagrams >= 1.9.4
+  - cassava
+  - optparse-applicative
 
 library:
-    source-dirs: 
-      - src/ch02/radar
-    exposed-modules: Radar
-    other-modules: []
-    dependencies:
-      - fmt
+  source-dirs: src
 
 executables:
-  hid-learn-exe:
+  stackquotes-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -39,26 +45,10 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - hid-learn
-  vocab01:
-    main: vocab01.hs
-    source-dirs: src/ch01
-    dependencies:
-      - text
-  vocab02:
-    main: vocab02.hs
-    source-dirs: src/ch01
-    dependencies:
-      - text
-  vocab03:
-    main: vocab03.hs
-    source-dirs: src/ch01
-    dependencies:
-      - text
-      - fmt
+    - stackquotes
 
 tests:
-  hid-learn-test:
+  stackquotes-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -66,10 +56,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - hid-learn
-  radar-test:
-    source-dirs: test/radar
-    main: Test.hs
-    dependencies:
-      - random >= 1.2
-      - hid-learn
+    - stackquotes

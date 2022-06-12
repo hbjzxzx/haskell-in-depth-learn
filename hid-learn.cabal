@@ -25,13 +25,12 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
-  other-modules:
-      Paths_hid_learn
+      Radar
   hs-source-dirs:
-      src
+      src/ch02/radar
   build-depends:
       base >=4.7 && <5
+    , fmt
   default-language: Haskell2010
 
 executable hid-learn-exe
@@ -54,6 +53,30 @@ executable vocab01
       src/ch01
   build-depends:
       base >=4.7 && <5
+    , text
+  default-language: Haskell2010
+
+executable vocab02
+  main-is: vocab02.hs
+  other-modules:
+      Paths_hid_learn
+  hs-source-dirs:
+      src/ch01
+  build-depends:
+      base >=4.7 && <5
+    , text
+  default-language: Haskell2010
+
+executable vocab03
+  main-is: vocab03.hs
+  other-modules:
+      Paths_hid_learn
+  hs-source-dirs:
+      src/ch01
+  build-depends:
+      base >=4.7 && <5
+    , fmt
+    , text
   default-language: Haskell2010
 
 test-suite hid-learn-test
@@ -67,4 +90,17 @@ test-suite hid-learn-test
   build-depends:
       base >=4.7 && <5
     , hid-learn
+  default-language: Haskell2010
+
+test-suite radar-test
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  other-modules:
+      Paths_hid_learn
+  hs-source-dirs:
+      test/radar
+  build-depends:
+      base >=4.7 && <5
+    , hid-learn
+    , random >=1.2
   default-language: Haskell2010
