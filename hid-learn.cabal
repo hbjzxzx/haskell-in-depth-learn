@@ -28,9 +28,72 @@ library
       Radar
   hs-source-dirs:
       src/ch02/radar
+      src/ch05
+      expr/rpn
   build-depends:
       base >=4.7 && <5
+    , extra
     , fmt
+    , mtl
+    , random
+    , text
+  default-language: Haskell2010
+
+executable du
+  main-is: Main.hs
+  other-modules:
+      AppRWST
+      AppTypes
+      DirTree
+      DiskUsage
+      FileCounter
+      Utils
+      Paths_hid_learn
+  hs-source-dirs:
+      du
+  default-extensions:
+      OverloadedStrings
+      RecordWildCards
+      NamedFieldPuns
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , extra
+    , filepath
+    , mtl
+    , optparse-applicative
+    , text
+    , text-show
+    , unix-compat
+  default-language: Haskell2010
+
+executable eval1
+  main-is: EvalRPNExceptT.hs
+  other-modules:
+      EvalRPBTrans
+      EvalRPN
+      Paths_hid_learn
+  hs-source-dirs:
+      expr/rpn
+  build-depends:
+      base >=4.7 && <5
+    , mtl >=2.0 && <2.3
+    , text
+    , text-show
+  default-language: Haskell2010
+
+executable filec
+  main-is: filecount.hs
+  other-modules:
+      Paths_hid_learn
+  hs-source-dirs:
+      src/ch05
+  build-depends:
+      base >=4.7 && <5
+    , extra
+    , fmt
+    , mtl
+    , text
   default-language: Haskell2010
 
 executable hid-learn-exe
@@ -43,6 +106,19 @@ executable hid-learn-exe
   build-depends:
       base >=4.7 && <5
     , hid-learn
+  default-language: Haskell2010
+
+executable sumlist
+  main-is: sumlist.hs
+  other-modules:
+      Paths_hid_learn
+  hs-source-dirs:
+      src/ch05
+  build-depends:
+      base >=4.7 && <5
+    , fmt
+    , mtl
+    , text
   default-language: Haskell2010
 
 executable vocab01
